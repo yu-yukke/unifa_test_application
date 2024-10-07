@@ -5,6 +5,10 @@ ja:
         user_id: ユーザーID
         password: パスワード
 
+      forms/create_post_form:
+        title: タイトル
+        image: 画像ファイル
+
     errors:
       models:
         forms/login_form:
@@ -13,3 +17,11 @@ ja:
               blank: を入力してください
             password:
               blank: を入力してください
+
+        forms/create_post_form:
+          attributes:
+            title:
+              blank: を入力してください
+              too_long: は30文字以内で入力してください
+            image:
+              blank: を選択してください
