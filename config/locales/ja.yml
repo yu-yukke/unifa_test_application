@@ -1,0 +1,15 @@
+ja:
+  activemodel:
+    attributes:
+      forms/login_form:
+        user_id: ユーザーID
+        password: パスワード
+
+    errors:
+      models:
+        forms/login_form:
+          attributes:
+            user_id:
+              blank: を入力してください
+            password:
+              blank: を入力してください
