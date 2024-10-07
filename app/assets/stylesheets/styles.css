@@ -31,3 +31,9 @@ ul {
   border: 1px solid #eaeaea;
   object-fit: cover;
 }
+
+.posts-actions {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}

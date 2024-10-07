@@ -1,6 +1,8 @@
 %div
   %h1 写真一覧
 
-  = link_to '写真をアップロードする', new_post_path
+  %div.posts-actions
+    = link_to 'MyTweetAppと連携', authenticate_path unless authenticated?
+    = link_to '写真をアップロードする', new_post_path
 
   = render 'posts', posts: @posts
