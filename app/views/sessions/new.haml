@@ -1,20 +1,6 @@
-%h1 ログイン
+%div
+  %h1 ログイン
 
-= form_with model: @form, url: sessions_path, local: true do |f|
-  - if @form&.errors.any?
-    %div
-      %h2 入力内容にエラーがあります
-      %ul
-        - @form.errors.full_messages.each do |message|
-          %li= message
+  = render 'layouts/common/error_messages', model: @form
 
-  %div
-    = f.label :user_id, 'ユーザーID'
-    = f.text_field :user_id
-
-  %div
-    = f.label :password, 'パスワード'
-    = f.password_field :password
-
-  %div
-    = f.submit 'ログインする'
+  = render 'form', form: @form
