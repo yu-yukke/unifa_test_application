@@ -1,0 +1,12 @@
+= form_with model: form, url: posts_path, data: { turbo: false } do |f|
+  %div.form-group
+    = f.label :title, 'タイトル'
+    = f.text_field :title
+
+  %div.form-group
+    = f.label :image, '画像ファイル'
+    = f.file_field :image
+
+  %div.form-group
+    = f.submit 'アップロード'
+    = link_to 'キャンセル', posts_path
