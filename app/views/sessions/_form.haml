@@ -1,9 +1,9 @@
 = form_with model: form, url: sessions_path, data: { turbo: false } do |f|
-  %div{ style: 'display: flex;'}
+  %div.form-group
     = f.label :user_id, 'ユーザーID'
     = f.text_field :user_id
 
-  %div{ style: 'display: flex;' }
+  %div.form-group
     = f.label :password, 'パスワード'
     = f.password_field :password
 
