@@ -11,13 +11,18 @@ class SessionsController < ApplicationController
     render :new and return unless @form.valid?
 
     if user = @form.authenticate
-      session[:current_user_id] = user.user_id
+      log_in(user)
 
-      #TODO: ログイン成功時のリダイレクト先を後から設定すること
-      redirect_to root_path
+      redirect_to posts_path
     else
       render :new
     end
+  end
+
+  def destroy
+    log_out
+
+    redirect_to new_session_path
   end
 
   private
