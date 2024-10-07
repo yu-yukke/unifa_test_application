@@ -1,13 +1,13 @@
-module AuthenticateHelper
-  def authenticated?
+module AuthorizationHelper
+  def authorized?
     session[:access_token].present?
   end
 
-  def authenticate(access_token)
+  def authorize(access_token)
     session[:access_token] = access_token
   end
 
-  def oauth_authenticate_url
+  def oauth_authorize_url
     callback_url = Rails.application.credentials.my_tweet_app[:callback_url]
     query = {
       client_id: Rails.application.credentials.my_tweet_app[:client_id],

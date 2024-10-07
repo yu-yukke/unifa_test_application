@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   include SessionHelper
-  include AuthenticateHelper
+  include AuthorizationHelper
 
   before_action :user_require_login
 

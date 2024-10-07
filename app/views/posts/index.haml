@@ -2,7 +2,7 @@
   %h1 写真一覧
 
   %div.posts-actions
-    = link_to 'MyTweetAppと連携', oauth_authenticate_url unless authenticated?
+    = link_to 'MyTweetAppと連携', oauth_authorize_url unless authorized?
     = link_to '写真をアップロードする', new_post_path
 
   = render 'posts', posts: @posts

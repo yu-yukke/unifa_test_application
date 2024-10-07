@@ -7,7 +7,7 @@ class Oauth::CallbacksController < ApplicationController
     response = post_authorization(code)
     access_token = JSON.parse(response.body)['access_token']
 
-    authenticate(access_token) if response.code == '200'
+    authorize(access_token) if response.code == '200'
 
     redirect_to posts_path
   end
