@@ -1,0 +1,6 @@
+%ul.posts
+  - posts.each do |post|
+    %li
+      %div
+        %h2.post-title= post.title
+        = image_tag(post.image, alt: post.title, class: 'post-image')
