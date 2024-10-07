@@ -90,6 +90,7 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     erubi (1.13.0)
+    erubis (2.7.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     haml (6.3.0)
@@ -101,6 +102,11 @@ GEM
       activesupport (>= 5.1)
       haml (>= 4.0.6)
       railties (>= 5.1)
+    html2haml (2.3.0)
+      erubis (~> 2.7.0)
+      haml (>= 4.0)
+      nokogiri (>= 1.6.0)
+      ruby_parser (~> 3.5)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.1)
@@ -186,6 +192,9 @@ GEM
     reline (0.5.10)
       io-console (~> 0.5)
     rexml (3.3.8)
+    ruby_parser (3.21.1)
+      racc (~> 1.5)
+      sexp_processor (~> 4.16)
     rubyzip (2.3.2)
     selenium-webdriver (4.25.0)
       base64 (~> 0.2)
@@ -193,6 +202,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sexp_processor (4.17.2)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -236,6 +246,7 @@ DEPENDENCIES
   capybara
   debug
   haml-rails
+  html2haml
   importmap-rails
   jbuilder
   puma (~> 5.0)
