@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :user_require_login, only: [:new, :create]
+  before_action :user_logged_in?, only: [:new, :create]
 
   def new
     @form = Forms::LoginForm.new
@@ -22,7 +23,7 @@ class SessionsController < ApplicationController
   def destroy
     log_out
 
-    redirect_to new_session_path
+    redirect_to root_path
   end
 
   private
@@ -34,5 +35,11 @@ class SessionsController < ApplicationController
         :user_id,
         :password
       )
+  end
+
+  def user_logged_in?
+    return unless logged_in?
+
+    redirect_to posts_path
   end
 end
