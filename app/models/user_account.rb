@@ -3,6 +3,6 @@ class UserAccount < ApplicationRecord
 
   with_options presence: true do
     validates :user_id
-    validates :password
+    validates :password_digest
   end
 end
