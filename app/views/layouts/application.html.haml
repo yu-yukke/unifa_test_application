@@ -9,6 +9,6 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body
-    = link_to "ログアウト", session_path, data: { turbo_method: :delete } if logged_in?
+    = button_to "ログアウト", session_path, method: :delete, data: { turbo: false } if logged_in?
 
     = yield
