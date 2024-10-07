@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :user_require_login, only: [:new, :create]
+
   def new
     @form = Forms::LoginForm.new
   end
