@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
 
-  resources :posts, only: [:index, :new, :create]
+  resources :posts, only: [:index, :new, :create] do
+    resource :tweet, only: [:create], module: :posts
+  end
 end

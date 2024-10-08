@@ -1,6 +1,7 @@
 %ul.posts
   - posts.each do |post|
     %li
-      %div
+      %div.post-card
         %h2.post-title= post.title
         = image_tag(post.image, alt: post.title, class: 'post-image')
+        = button_to 'ツイートする', post_tweet_path(post), method: :post, data: { turbo: false }
