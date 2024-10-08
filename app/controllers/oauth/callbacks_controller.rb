@@ -1,7 +1,7 @@
-class Oauth::CallbacksController < ApplicationController
-  require 'net/http'
-  require 'uri'
+require 'net/http'
+require 'uri'
 
+class Oauth::CallbacksController < ApplicationController
   def index
     code = params[:code]
     response = post_authorization(code)
@@ -16,8 +16,8 @@ class Oauth::CallbacksController < ApplicationController
 
   def post_authorization(code)
     uri = URI.parse(oauth_token_url)
-    query = oauth_token_query(code)
-    response = Net::HTTP.post_form(uri, query)
+    body = oauth_token_query(code)
+    response = Net::HTTP.post_form(uri, body)
 
     response
   end
