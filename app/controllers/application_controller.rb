@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include SessionHelper
   include AuthorizationHelper
+  include PostTweetHelper
 
   before_action :user_require_login
 
